@@ -178,6 +178,11 @@ terminus-veil-emberfall/
 
 ---
 
+## Demo video
+
+[![Demo](demo.gif)](https://youtu.be/Pkvt6fPIuZY)
+
+-
 ## Contributing
 
 Want to expand Emberfall? You can:  
