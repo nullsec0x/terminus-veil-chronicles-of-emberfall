@@ -180,7 +180,7 @@ terminus-veil-emberfall/
 
 ## Demo video
 
-[![Demo](demo.gif)](https://youtu.be/Pkvt6fPIuZY)
+[![Demo](clip.gif)](https://youtu.be/Pkvt6fPIuZY)
 
 -
 ## Contributing
