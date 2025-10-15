@@ -2,204 +2,89 @@
 
 ![banner](./assets/cover.png)
 
-A **magic-themed roguelike** where you play as a wizard exploring ancient dungeons, casting spells, and uncovering arcane secrets.  
-Descend through procedurally generated labyrinths filled with magical creatures, powerful artifacts, and forgotten lore.  
-This entry in the *Terminus Veil* universe expands upon the series’ foundation with a **deep spell system, mana mechanics, and arcane exploration**.
+You play as an Arcanist (wizard/mage) going into dungeons that are different every time. Fight monsters, pick up loot, and use your spells and mana smart to survive. Turn-based, tactical, old-school roguelike style, ASCII art everywhere.
 
----
+## Gameplay
 
-## Features
+### Movement
+- WASD or arrows to move or attack
+- Dungeons are randomly generated using BSP, layouts change each run
+- Field of view limited by walls, explored areas are remembered
+- Deeper levels = stronger monsters, better loot
 
-### Core Gameplay
-- **Turn-based exploration and combat** — Move using WASD or arrow keys.
-- **Procedural dungeon generation** — Each descent creates a new labyrinth powered by BSP algorithms.
-- **Magic system** — Manage mana, cast spells, and harness ancient power.
-- **Stat-based progression** — Intelligence and Wisdom influence spell power and regeneration.
-- **Resource management** — Mana regenerates slowly, rewarding strategic thinking.
-- **Turn-based combat** — Engage enemies using physical attacks or spells.
-- **Progressive difficulty** — Enemies grow stronger as you descend deeper.
+### Player
+- Stats: Intelligence (spells stronger), Wisdom (healing + mana regen), Mana Pool (magic resource)
+- HP starts at 100, heal with spells/items
+- Inventory: potions, scrolls, other items you find
 
-### Visual Experience
-- **Beautiful ASCII Art** — Magical symbols, glowing sigils, and character designs.
-- **Smart Wall Rendering** — Uses proper line-drawing characters (╔╗╚╝║═╬) for dungeon realism.
-- **Field of View system** — Shadowcasting-based visibility with exploration memory.
-- **Color-coded entities** — Distinct hues for players, monsters, and items.
-- **Magical atmosphere** — Dynamic environments infused with ley lines and glowing runes.
-
-### Spell System
-Master the **four core spells** of Emberfall and manipulate mana to survive.
+### Spells
 | Spell | Mana Cost | Effect |
-|--------|------------|--------|
-| Fireball | 20 MP | Damages the closest visible enemy with fire damage. |
-| Heal | 15 MP | Restores 20–35 HP based on Wisdom. |
-| Teleport | 25 MP | Instantly move to a random safe location. |
-| Lightning Bolt | 30 MP | Strikes a random enemy with high damage. |
+|-------|-----------|--------|
+| Fireball | 20 MP | Damages nearest enemy |
+| Heal | 15 MP | Restores 20–35 HP, scales with Wisdom |
+| Teleport | 25 MP | Move to a safe spot instantly |
+| Lightning Bolt | 30 MP | Hits a random enemy hard |
 
-### Mage Attributes
-- **Intelligence** — Increases spell damage and magical precision.  
-- **Wisdom** — Improves healing efficiency and mana regeneration.  
-- **Mana Pool** — Regenerates 1 MP per turn naturally.
+- Mana regenerates 1 MP per turn naturally, killing monsters restores some, potions +30 MP
+- Spells are mapped to 1–4
 
----
+### Combat
+- Turn-based, choose to move, attack, or cast spells
+- Staff attacks are weak, spells do more damage
+- Monsters act on their turn according to AI
+- Use spells strategically for damage, healing, or escaping
 
-## Magical Entities & Items
+### Items
+- Mana Potion: restores 30 MP
+- Magic Scroll: random effect
+- Other items scattered, pick them up if needed
 
-### Arcane Creatures
-| Symbol | Creature | Description |
-|--------|-----------|-------------|
-| ♠ | Goblin | Basic enemy, low threat. |
-| ♣ | Orc | Strong melee fighter with moderate HP. |
-| ♦ | Dragon | Powerful boss enemy with fire breath. |
-| ◘ | Arcane Elemental | Magical being that grants mana when defeated. |
-| ¶ | Fire Imp | Fire-based creature resistant to burn damage. |
-| § | Ice Wraith | Ice-based spirit with freezing attacks. |
+### Levels
+- Each level has an exit, go deeper to continue
+- Deeper levels have more monsters, stronger monsters, better loot
 
-### Items & Equipment
-
-#### Consumables
-| Item | Symbol | Effect |
-|------|---------|--------|
-| Health Potion | ♥ | Restores 25 HP. |
-| Mana Potion | ♠ | Restores 30 MP. |
-| Magic Scroll | ≈ | Triggers a random magical effect. |
-
-#### Equipment
-| Item | Symbol | Effect |
-|------|---------|--------|
-| Magic Wand | ⁄ | +3 Attack, +1 Intelligence. |
-| Staff | ⌠ | +20 Max MP, +2 Wisdom. |
-| Arcane Amulet | ☼ | +15 Max MP. |
-
----
+## Visuals
+- ASCII art for monsters, walls, spells
+- Walls use line characters (╔╗╚╝║═╬)
+- Colors differentiate player, monsters, items
+- Magical effects like glowing runes, ley lines
 
 ## Controls
+- WASD/Arrows: move/attack
+- 1: Fireball
+- 2: Heal
+- 3: Teleport
+- 4: Lightning Bolt
+- 5: Mana Potion
+- 6: Magic Scroll
+- R: restart level
+- Q: quit game
 
-| Key | Action | Description |
-|-----|--------|-------------|
-| WASD / Arrows | Move / Attack | Move character or attack with staff. |
-| 1 | Cast Fireball | (20 MP) Damages closest enemy. |
-| 2 | Cast Heal | (15 MP) Restores HP. |
-| 3 | Cast Teleport | (25 MP) Move to safe location. |
-| 4 | Cast Lightning Bolt | (30 MP) High damage to random enemy. |
-| 5 | Use Mana Potion | Restore 30 MP. |
-| 6 | Use Magic Scroll | Random magical effect. |
-| R | Restart Level | Restart current level. |
-| Q | Quit Game | Exit the game. |
+## Tips
+- Manage mana, it regenerates slowly
+- Use Teleport to escape dangerous situations
+- Heal before you get too low
+- Collect potions for long runs
+- Intelligence makes spells stronger, Wisdom improves healing and mana efficiency
+- Take advantage of walls and layout for strategy
+- Combos: Fireball → Teleport, Heal between fights, Lightning Bolt for priority targets
 
----
+## Tech
+- Python 3.11+
+- Textualize for terminal UI
+- Modular, object-oriented code
 
-## Strategy Guide
-
-### Basic Tips
-- **Manage Mana Carefully** — Regeneration is slow, use wisely.
-- **Use Teleport** — Great for escaping danger quickly.
-- **Heal Proactively** — Don't wait until it’s too late.
-- **Collect Mana Potions** — Essential for long runs.
-
-### Advanced Tactics
-- Defeating **magical enemies** restores mana.  
-- Prioritize boosting **Intelligence** for spell power.  
-- **Wisdom** improves mana efficiency and healing potency.  
-- Use the **environment** — walls block line of sight for enemies.  
-
-### Spell Combos
-- **Fireball → Teleport** — Hit and vanish tactic.  
-- **Heal** often between fights to stay alive.  
-- **Lightning Bolt** for dangerous targets.  
-
----
-
-## Installation & Running
-
-### Requirements
-- **Python 3.11+**
-- **Textualize** library
-
-### Quick Start
-```bash
-# Install dependencies
-pip install textual
-
-# Run the game
-python main.py
-```
-
-### Building Executable
-```bash
-pip install pyinstaller
-pyinstaller --onefile main.py
-```
-
----
-
-## Project Structure
-
-```
-terminus-veil-emberfall/
-├── main.py                  # Entry point
-├── game/
-│   ├── __init__.py
-│   ├── player.py            # Mage character and stats
-│   ├── game_map.py          # Map rendering and magical terrain
-│   ├── dungeon_generator.py # Procedural generation
-│   ├── monster.py           # Magical creature system
-│   ├── combat.py            # Turn-based combat logic
-│   ├── items.py             # Inventory and magical items
-│   ├── fov.py               # Field of view
-│   ├── ascii_art.py         # Visual rendering
-│   ├── magic.py             # Spell system and mana
-│   └── spell_effects.py     # Individual spell logic
-└── README.md
-```
-
----
-
-## Development & Architecture
-
-- **Engine** — Python + Textualize (TUI framework)  
-- **Architecture** — Modular, object-oriented design  
-- **Algorithms** — BSP dungeon generation, shadowcasting FOV  
-- **Compatibility** — Cross-platform (Windows, macOS, Linux)  
-
-### Development Time (Estimate)
-| Phase | Duration | Description |
-|--------|-----------|-------------|
-| Core Systems | 5 hrs | Player, spells, and mana system |
-| Content | 4 hrs | Enemies, items, combat |
-| Visual Polish | 3 hrs | ASCII art and UI |
-
----
+Key files: main.py, game/player.py, game/game_map.py, game/dungeon_generator.py, game/monster.py, game/combat.py, game/items.py, game/fov.py, game/ascii_art.py, game/magic.py, game/spell_effects.py
 
 ## Lore
+Magic has returned to Emberfall. As an Arcanist, you descend into dungeons to master spells and discover why magic has resurfaced.
 
-> In the world of **Emberfall**, magic has reawakened after centuries of silence.  
-> Deep within forgotten dungeons, ancient energies stir once more. As a mage of the Arcane Order,  
-> you descend into the heart of the world, mastering spells and seeking the truth behind the resurgence of magic itself.  
+## Summary
+- Turn-based roguelike focused on magic
+- Every run is different due to procedural generation
+- Strategy, resource management, and tactical decisions are key
+- ASCII visuals with magical atmosphere
 
----
-
-## Demo video
-
+## Demo
 [![Demo](clip.gif)](https://youtu.be/Pkvt6fPIuZY)
 
--
-## Contributing
-
-Want to expand Emberfall? You can:  
-- Add **new spells and schools of magic**  
-- Implement **new character classes** (Sorcerer, Necromancer, etc.)  
-- Enhance **magic items** with enchantments  
-- Add **bosses** with unique mechanics  
-
----
-
-## License
-
-**Open source** — Feel free to use and modify.
-
----
-
-## Credits
-
-Created by **Nullsec0x** as part of the *Terminus Veil* universe.  
-Built with Python and **Textualize**, focusing on **arcane adventure** and **magical exploration**.
